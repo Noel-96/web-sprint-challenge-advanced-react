@@ -48,16 +48,16 @@ test("form header renders", () => {
     const zip = screen.getByLabelText(/Zip/i);
     const checkoutButton = screen.getByRole("button", { name: /checkout/i });
     // Act
-    userEvent.type(firstName, "Rhiannon");
-    userEvent.type(lastName, "Stanford");
-    userEvent.type(address, "1234 Street");
-    userEvent.type(city, "Honolulu");
-    userEvent.type(state, "Hawaii");
-    userEvent.type(zip, "12345");
+    userEvent.type(firstName, "Noel");
+    userEvent.type(lastName, "Obaseki");
+    userEvent.type(address, "default Street");
+    userEvent.type(city, "lagos");
+    userEvent.type(state, "edo");
+    userEvent.type(zip, "15234");
     userEvent.click(checkoutButton);
     // Assert
     const success = screen.getByText(/woo-hoo/i);
-    const newUser = screen.getByText(/Rhiannon/i);
+    const newUser = screen.getByText(/Noel/i);
   
       expect(success).toBeTruthy();
       expect(success).toBeInTheDocument();
